@@ -115,3 +115,16 @@ input:focus{
         font-size: 23px;
     }
 }
+
+@media (max-width:380px) and (max-height:700px){
+    form{
+        padding: 5px;
+    }
+    input{
+        font-size: 16px;
+    }
+    #search{
+        height: 50px;
+        width: 50px;
+    }
+}
