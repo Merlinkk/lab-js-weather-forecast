@@ -6,6 +6,7 @@ API_KEY = '725ce78d018f542d22bc4601873b8bc5'
 const kelvin = 273.15;
 const background = document.getElementById('background');
 let container = document.getElementById('info-container');
+const ico = document.getElementById('ico');
 
 let options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 
@@ -69,6 +70,7 @@ function getWeather(lat,lon){
             let max = data.main.temp_max - kelvin;
 
             backgroundChange(desc)
+            icoRender(desc)
 
             document.getElementById('destination').innerHTML = destination;
             document.getElementById('date').innerHTML = dateToDisplay;
@@ -102,5 +104,29 @@ function backgroundChange(desc){
         background.src = weatherImgObject.thunderstorm;
     }else{
         background.src = weatherImgObject.red;
+    }
+}
+
+function icoRender(desc){
+    if(desc == 'clear sky'){
+        ico.src = weatherIcons.clearSky;
+    }else if(desc == 'broken clouds'){
+        ico.src = weatherIcons.brokenClouds;
+    }else if(desc == 'few clouds'){
+        ico.src = weatherIcons.fewClouds;
+    }else if(desc == 'mist' || desc == 'haze' || desc == 'fog' || desc == 'smoke' || desc == 'dust' || desc == 'sand' || desc == 'ash' || desc == 'squall' || desc == 'tornado'){
+        ico.src = weatherIcons.mist;
+    }else if(desc == 'rain'){
+        ico.src = weatherIcons.rain;
+    }else if(desc == 'scattered clouds'){
+        ico.src = weatherIcons.scatteredClouds;
+    }else if(desc == 'shower rain'|| desc == 'light rain' || desc == 'drizzle' || desc == 'light intensity drizzle' || desc == 'heavy intensity drizzle' || desc == 'light intensity drizzle rain' || desc == 'drizzle rain' || desc == 'heavy intensity drizzle rain' || desc == 'shower rain and drizzle' || desc == 'heavy shower rain and drizzle' || desc == 'shower drizzle'){
+        ico.src = weatherIcons.showerRain;
+    }else if(desc == 'snow'){
+        ico.src = weatherIcons.snow;
+    }else if(desc == 'thunderstorm'){
+        ico.src = weatherIcons.thunderstorm;
+    }else{
+        ico.style.display = 'none';
     }
 }
