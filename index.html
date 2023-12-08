@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <link rel="icon" type="image/x-icon" href="./images/ico.png">
+  <title>Weather app</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div id="blur"> 
+      <img id="background" src="./images/red.jpg" alt="">
+    </div>
+    <div id="container">
+      <form id="getLocation">
+        <input type="text" id="city" placeholder="Enter city name">
+        <input type="button"  id="search">
+      </form>
+      <div id="info-container">
+      <div id="destination"></div>
+      <div id="date"></div>
+      <div id="temp-f"></div>
+      <div id="desc"></div>
+      <div id="temp-s"></div>
+    </div>
+  <script src="weather.js"></script>
+</body>
+</html>
