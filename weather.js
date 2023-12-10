@@ -13,6 +13,8 @@ let options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' 
 let currentDate = new Date();
 let date = currentDate.toLocaleDateString('en-GB', options)
 
+const cityInp = document.getElementById('city');
+
 function geoCoder(city){
     fetch(
         `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${API_KEY}`
@@ -130,3 +132,11 @@ function icoRender(desc){
         ico.style.display = 'none';
     }
 }
+
+cityInp.addEventListener('keydown', (e) => {
+    if(e.key===`Enter`){
+        e.preventDefault(); 
+        const city = document.getElementById('city').value;
+        geoCoder(city);
+    }
+})
