@@ -114,19 +114,19 @@ function icoRender(desc){
         ico.src = weatherIcons.clearSky;
     }else if(desc == 'broken clouds'){
         ico.src = weatherIcons.brokenClouds;
-    }else if(desc == 'few clouds'){
+    }else if(desc == 'few clouds' || desc == 'overcast clouds'){
         ico.src = weatherIcons.fewClouds;
     }else if(desc == 'mist' || desc == 'haze' || desc == 'fog' || desc == 'smoke' || desc == 'dust' || desc == 'sand' || desc == 'ash' || desc == 'squall' || desc == 'tornado'){
         ico.src = weatherIcons.mist;
-    }else if(desc == 'rain'){
+    }else if(desc == 'rain' || desc == 'moderate rain' || desc == 'heavy intensity rain' || desc == 'very heavy rain' || desc == 'extreme rain' || desc == 'freezing rain' || desc == 'light intensity shower rain' || desc == 'heavy intensity shower rain' || desc == 'ragged shower rain'){
         ico.src = weatherIcons.rain;
     }else if(desc == 'scattered clouds'){
         ico.src = weatherIcons.scatteredClouds;
     }else if(desc == 'shower rain'|| desc == 'light rain' || desc == 'drizzle' || desc == 'light intensity drizzle' || desc == 'heavy intensity drizzle' || desc == 'light intensity drizzle rain' || desc == 'drizzle rain' || desc == 'heavy intensity drizzle rain' || desc == 'shower rain and drizzle' || desc == 'heavy shower rain and drizzle' || desc == 'shower drizzle'){
         ico.src = weatherIcons.showerRain;
-    }else if(desc == 'snow'){
+    }else if(desc == 'snow' || desc == 'light snow' || desc == 'Heavy snow' || desc == 'Sleet' || desc == 'Light shower sleet' || desc == 'Shower sleet' || desc == 'Light rain and snow' || desc == 'Rain and snow' || desc == 'Light shower snow' || desc == 'Shower snow' || desc == 'Heavy shower snow'){
         ico.src = weatherIcons.snow;
-    }else if(desc == 'thunderstorm'){
+    }else if(desc == 'thunderstorm' || desc == 'thunderstorm with light rain' || desc == 'thunderstorm with rain' || desc == 'thunderstorm with heavy rain' || desc == 'light thunderstorm' || desc == 'heavy thunderstorm' || desc == 'ragged thunderstorm' || desc == 'thunderstorm with light drizzle' || desc == 'thunderstorm with drizzle' || desc == 'thunderstorm with heavy drizzle'){
         ico.src = weatherIcons.thunderstorm;
     }else{
         ico.style.display = 'none';
