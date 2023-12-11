@@ -90,19 +90,19 @@ function backgroundChange(desc){
         background.src = weatherImgObject.clearSky;
     }else if(desc == 'broken clouds'){
         background.src = weatherImgObject.brokenClouds;
-    }else if(desc == 'few clouds'){
+    }else if(desc == 'few clouds' || desc == 'overcast clouds'){
         background.src = weatherImgObject.fewClouds;
     }else if(desc == 'mist' || desc == 'haze' || desc == 'fog' || desc == 'smoke' || desc == 'dust' || desc == 'sand' || desc == 'ash' || desc == 'squall' || desc == 'tornado'){
         background.src = weatherImgObject.mist;
-    }else if(desc == 'rain'){
+    }else if(desc == 'rain' || desc == 'moderate rain' || desc == 'heavy intensity rain' || desc == 'very heavy rain' || desc == 'extreme rain' || desc == 'freezing rain' || desc == 'light intensity shower rain' || desc == 'heavy intensity shower rain' || desc == 'ragged shower rain'){
         background.src = weatherImgObject.rain;
     }else if(desc == 'scattered clouds'){
         background.src = weatherImgObject.scatteredClouds;
-    }else if(desc == 'shower rain'){
+    }else if(desc == 'shower rain'|| desc == 'light rain' || desc == 'drizzle' || desc == 'light intensity drizzle' || desc == 'heavy intensity drizzle' || desc == 'light intensity drizzle rain' || desc == 'drizzle rain' || desc == 'heavy intensity drizzle rain' || desc == 'shower rain and drizzle' || desc == 'heavy shower rain and drizzle' || desc == 'shower drizzle'){
         background.src = weatherImgObject.showerRain;
-    }else if(desc == 'snow'){
+    }else if(desc == 'snow' || desc == 'light snow' || desc == 'Heavy snow' || desc == 'Sleet' || desc == 'Light shower sleet' || desc == 'Shower sleet' || desc == 'Light rain and snow' || desc == 'Rain and snow' || desc == 'Light shower snow' || desc == 'Shower snow' || desc == 'Heavy shower snow'){
         background.src = weatherImgObject.snow;
-    }else if(desc == 'thunderstorm'){
+    }else if(desc == 'thunderstorm' || desc == 'thunderstorm with light rain' || desc == 'thunderstorm with rain' || desc == 'thunderstorm with heavy rain' || desc == 'light thunderstorm' || desc == 'heavy thunderstorm' || desc == 'ragged thunderstorm' || desc == 'thunderstorm with light drizzle' || desc == 'thunderstorm with drizzle' || desc == 'thunderstorm with heavy drizzle'){
         background.src = weatherImgObject.thunderstorm;
     }else{
         background.src = weatherImgObject.red;
