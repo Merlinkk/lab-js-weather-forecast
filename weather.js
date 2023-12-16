@@ -15,14 +15,19 @@ let date = currentDate.toLocaleDateString('en-GB', options)
 
 const cityInp = document.getElementById('city');
 
+const loader = document.querySelector('.loader');
+
 function geoCoder(city){
     fetch(
         `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${API_KEY}`
       )
         .then((response) => response.json())
         .then((data) => {console.log(data);getWeather(data[0].lat,data[0].lon);})
-        .catch((err) => alert('Enter Valid City Name'));
-    }
+        .catch((err) => {
+            alert('Enter Valid City Name')
+            loader.style.display = 'none';
+        });
+        }
 
 const weatherImgObject = {
     clearSky: './images/clear-sky.jpg',
@@ -54,6 +59,8 @@ const search = document.getElementById('search');
 
 search.addEventListener('click', () => {
     const city = document.getElementById('city').value;
+    container.style.display = 'none';            
+    loader.style.display = 'block';
     geoCoder(city);
 })
 
@@ -64,6 +71,8 @@ function getWeather(lat,lon){
         .then((response) => response.json())
         .then((data) => {console.log(data); return data;})
         .then((data) => {
+            loader.style.display = 'none';
+
             let destination = `${data.name}, ${data.sys.country}`;
             let dateToDisplay = date;
             let tempf = data.main.feels_like - kelvin;
@@ -81,7 +90,9 @@ function getWeather(lat,lon){
             document.getElementById('temp-s').innerHTML = `${min.toFixed(1)}°C / ${max.toFixed(1)}°C`;
             container.style.display = 'flex';            
         })
-        .catch((err) => alert('Enter Valid City Name'));
+        .catch((err) => {
+            alert('Enter Valid City Name')
+        });
     }
 
 
